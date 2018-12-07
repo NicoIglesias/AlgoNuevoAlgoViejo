@@ -1,27 +1,3 @@
-<?php
-
-
-  if ($auth->estaLogueado()) {
-		header("Location:index.php");exit;
-	}
-
-  $tituloRegistro = "Registrese";
-
-  $errores = [];
-
-  if ($_POST) {
-    $errores = $validador-> validarRegistro($_POST, $db);
-
-    if (count($errores) == 0) {
-  	  $usuario = new Usuario($_POST["email"], $_POST["nombre_usuario"], $_POST["nombre_completo"], $_POST["contrasena"]);
-
-      $usuario = $db->guardarUsuario($usuario);
-    }
-  }
-
-
-
-?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">

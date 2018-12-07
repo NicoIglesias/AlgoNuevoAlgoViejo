@@ -1,25 +1,4 @@
-<?php
 
- include_once("soporte.php");
-
-  if ($auth->estaLogueado()) {
-		header("Location:index.php");exit;
-	}
-
-	$errores = [];
-	if ($_POST) {
-		$errores = $validador->validarLogin($_POST, $db);
-		if (count($errores) == 0) {
-			// LOGUEAR
-      		$auth->loguear($_POST["email"]);
-			if (isset($_POST["recordame"])) {
-				//Quiere que lo recuerde
-				$auth->recordame($_POST["email"]);
-			}
-      		header("Location:perfil-usuario.php");
-		}
-	}
-?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
