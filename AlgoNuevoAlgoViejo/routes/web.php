@@ -14,3 +14,27 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/home', function () {
+    return view('home');
+});
+
+Route::get('/faq', function () {
+    return view('faq');
+});
+
+Route::get('/logueo', function () {
+    return view('logueo');
+});
+
+Route::get('/perfil', function () {
+    return view('perfil');
+});
+
+Route::get('/register', function () {
+    return view('register');
+});
+
+Route::get('/sobrenosotros', function () {
+    return view('sobrenosotros');
+});
