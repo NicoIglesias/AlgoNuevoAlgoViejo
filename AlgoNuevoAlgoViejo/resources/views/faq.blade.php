@@ -1,4 +1,5 @@
-<?php require_once('/navbar') ?>
+
+@include ('navbar')
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
  <head>

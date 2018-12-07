@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 
+=======
+@include ('navbar')
+>>>>>>> 2cfab59d4ec1f85a81b761ecdbb5fee966a31f29
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>

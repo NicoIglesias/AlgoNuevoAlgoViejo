@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 
+=======
+@include ('navbar')
+>>>>>>> 2cfab59d4ec1f85a81b761ecdbb5fee966a31f29
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -45,21 +49,21 @@
 
     <form class="form" action="registro.php" method="post">
       <img src="images/logo60s.png" style="width:180px">
-      <h1><?php echo $tituloRegistro ?></h1> <br>
+      <h1></h1> <br>
       Nombre completo: <br>
-      <span class="error"><?php echo $errores['nombre_completo']??''; ?></span> <br>
+      <span class="error"></span> <br>
       <input type="text" name="nombre_completo" placeholder="Ingrese nombre completo" id="nombre_completo"> <br>
       Nombre de Usuario: <br>
-      <span class="error"><?php echo $errores['nombre_usuario']??''; ?></span> <br>
+      <span class="error"></span> <br>
       <input type="text" id="nombre_usuario" name="nombre_usuario" placeholder="Ingrese nombre de usuario">
       Correo electronico: <br>
-      <span class="error"><?php echo $errores['email']??''; ?></span> <br>
+      <span class="error"></span> <br>
       <input type="email" id="email"name="email" placeholder="Ingrese email"><br>
       Contraseña: <br>
-      <span class="error"><?php echo $errores['contraseña']??''; ?></span> <br>
+      <span class="error"></span> <br>
       <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña"> <br>
       Repita contraseña: <br>
-      <span class="error"><?php echo $errores['confirmarContra']??''; ?></span> <br>
+      <span class="error"></span> <br>
       <input type="password" id="confirmarContra"name="confirmarContra" placeholder="Repita su contraseña"> <br>
       Imagen de perfil: <br><br>
       <input type="file" name="" value=""> <br><br>
