@@ -1,8 +1,6 @@
-<<<<<<< HEAD
 
-=======
 @include ('navbar')
->>>>>>> 2cfab59d4ec1f85a81b761ecdbb5fee966a31f29
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -53,6 +51,17 @@
       Nombre completo: <br>
       <span class="error"></span> <br>
       <input type="text" name="nombre_completo" placeholder="Ingrese nombre completo" id="nombre_completo"> <br>
+      <label>Elegí tu país:</label><br>
+		  <select class="form-control" name="pais" id="paises">
+			<option value="">Elegí un país</option>
+			</select>
+      <br><br><br>
+      <div class="form-group" style="display: none;" id="provCont">
+							<label>Elegí la provincia:</label>
+							<select class="form-control" name="provincia" id="provincias">
+							</select>
+						</div>
+            <br><br>
       Nombre de Usuario: <br>
       <span class="error"></span> <br>
       <input type="text" id="nombre_usuario" name="nombre_usuario" placeholder="Ingrese nombre de usuario">
@@ -70,6 +79,44 @@
       <input class="btn btn-primary btn btn-outline-success" type="submit" name="submit" value="Registrese">
       <a class="btn btn-primary btn btn-outline-danger" href ="index.php">Cancelar</a>
     </form>
+    <script>
+		var selectPaises = document.getElementById('paises');
+		var selectProvincias = document.getElementById('provincias');
+		var provCont = document.getElementById('provCont');
+		var theImg = document.getElementById('flag');
+
+		const fetchGenerico = (url, callback) => {
+			fetch(url)
+				.then(response => response.json())
+				.then(data => callback(data))
+				.catch(error => console.log(error));
+		};
+
+		function setPaises (info) {
+			info.forEach(function (position) {
+				selectPaises.innerHTML += `<option data-img="${position.flag}"> ${position.name}</option>`;
+			});
+		}
+
+		function setProvincias (info) {
+			info.forEach(function (position) {
+				selectProvincias.innerHTML += '<option>' + position.state + '</option>';
+			});
+		}
+
+		fetchGenerico('https://restcountries.eu/rest/v2/all', setPaises);
+
+		selectPaises.addEventListener('change', function () {
+			var theOptions = this.options;
+			if (this.value === 'Argentina') {
+				provCont.style.display = 'block';
+				fetchGenerico('https://dev.digitalhouse.com/api/getProvincias', setProvincias);
+			} else {
+				provCont.style.display = 'none';
+				selectProvincias.innerHTML = '';
+			}
+		});
+	</script>
 
   </body>
 </html>
